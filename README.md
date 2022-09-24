@@ -3,7 +3,6 @@ awmtt (AwesomeWM Testing Tool) is a bash script that helps you test your Awesome
 It requires Xephyr, an Xorg-Application which can spawn a nested instance of xorg-server, allowing you to open multiple instances of Desktop Environments or Window Mangers like AwesomeWM.  
 
 ### Installation
-ArchLinux users can find awmtt in the [AUR](https://aur.archlinux.org/packages/awmtt/).
 
 Example Debian/Ubuntu manual installation:
 ``` bash
