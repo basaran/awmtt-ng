@@ -222,7 +222,7 @@ parse_options() {
             -C|--config)    shift; RC_FILE="$1";;
             -D|--display)   shift; D="$1"
                             [[ ! "$D" =~ ^[0-9] ]] && errorout "$D is not a valid display number";;
-            -R|--reload)    shift; RELOAD="true";;
+            -R|--reload)    RELOAD="true";;
             -N|--notest)    RC_FILE="$HOME"/.config/awesome/rc.lua;;
             -S|--size)      shift; SIZE="$1";;
             -a|--aopt)      shift; AWESOME_OPTIONS+="$1 ";;
