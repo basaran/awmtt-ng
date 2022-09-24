@@ -26,6 +26,7 @@ Options:
   -B|--binary <path>  Specify path to awesome binary (for testing custom awesome builds)
   -C|--config <path>  Specify configuration file
   -D|--display <int>  Specify the display to use (e.g. 1)
+  -R|--autoreload     Enable automatic config reloading upon modification . Requires entr.
   -N|--notest         Don't use a testfile but your actual rc.lua (i.e. $HOME/.config/awesome/rc.lua)
                       This happens by default if there is no rc.lua.test file.
   -S|--size <size>    Specify the window size
@@ -88,7 +89,12 @@ start() {
 
     "$XEPHYR" :$D -name xephyr_$D -ac -br -noreset -screen "$SIZE" $XEPHYR_OPTIONS >/dev/null 2>&1 &
     sleep 1
-    DISPLAY=:$D.0 "$AWESOME" -c "$RC_FILE" $AWESOME_OPTIONS &
+    if [[ -n "${RELOAD}" ]]; then
+        echo "autoreload enabled"
+        find ${RC_FILE} | $(which entr) -r sh -c "DISPLAY=:${D}.0 ${AWESOME} -c ${RC_FILE} ${AWESOME_OPTIONS}"
+    else
+        DISPLAY=:$D.0 "$AWESOME" -c "$RC_FILE" $AWESOME_OPTIONS &
+    fi
     sleep 1
 
     # print some useful info
@@ -216,6 +222,7 @@ parse_options() {
             -C|--config)    shift; RC_FILE="$1";;
             -D|--display)   shift; D="$1"
                             [[ ! "$D" =~ ^[0-9] ]] && errorout "$D is not a valid display number";;
+            -R|--reload)    shift; RELOAD="true";;
             -N|--notest)    RC_FILE="$HOME"/.config/awesome/rc.lua;;
             -S|--size)      shift; SIZE="$1";;
             -a|--aopt)      shift; AWESOME_OPTIONS+="$1 ";;

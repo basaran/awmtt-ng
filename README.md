@@ -1,4 +1,4 @@
-# awmtt
+# awmtt-ng
 awmtt (AwesomeWM Testing Tool) is a bash script that helps you test your Awesome configuration files.  
 It requires Xephyr, an Xorg-Application which can spawn a nested instance of xorg-server, allowing you to open multiple instances of Desktop Environments or Window Mangers like AwesomeWM.  
 
@@ -12,6 +12,12 @@ sudo wget -O /usr/bin/awmtt https://raw.githubusercontent.com/mikar/awmtt/master
 sudo chmod a+x /usr/bin/awmtt
 ```
 
+### Live Reload
+To use `-R` live reload option, you need to install [entr](https://github.com/eradman/entr).
+
+```
+
+```
 ### Screenshot
 Here's an example of what it looks like:  
 ![ScreenShot](https://github.com/mikar/awmtt/blob/master/example.jpg)
@@ -39,6 +45,7 @@ Options:
   -B|--binary <path>  Specify path to awesome binary (for testing custom awesome builds)
   -C|--config <path>  Specify configuration file
   -D|--display <int>  Specify the display to use (e.g. 1)
+  -R|--autoreload     Enable automatic config reloading upon modification . Requires entr.
   -N|--notest         Don't use a testfile but your actual rc.lua (i.e. $HOME/.config/awesome/rc.lua)
                       This happens by default if there is no rc.lua.test file.
   -S|--size <size>    Specify the window size
@@ -53,5 +60,5 @@ Examples:
 ```
 
 ### Xephyr
-Have a look at http://awesome.naquadah.org/wiki/Using_Xephyr and its documentation to learn more about how to use it. 
-For instance, you can press `Control-Mod3-Shift` to have Xephyr grab focus while inside the window so that you can't accidentally leave it. To let go, press `Control-(Right-)Shift`.  
+Have a look at https://awesomewm.org/apidoc/documentation/07-my-first-awesome.md.html and its documentation to learn more about how to use it. 
+For instance, you can press `Control-Shift` to have Xephyr grab focus while inside the window so that you can't accidentally leave it. To let go, press `Control-Shift`.  
