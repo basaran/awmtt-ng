@@ -91,7 +91,7 @@ start() {
     sleep 1
     if [[ -n "${RELOAD}" ]]; then
         echo "autoreload enabled"
-        find ${RC_FILE} | $(which entr) -r sh -c "DISPLAY=:${D}.0 ${AWESOME} -c ${RC_FILE} ${AWESOME_OPTIONS}"
+        find $(dirname ${RC_FILE}) | $(which entr) -r sh -c "DISPLAY=:${D}.0 ${AWESOME} -c ${RC_FILE} ${AWESOME_OPTIONS}"
     else
         DISPLAY=:$D.0 "$AWESOME" -c "$RC_FILE" $AWESOME_OPTIONS &
     fi
