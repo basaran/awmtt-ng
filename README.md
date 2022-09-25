@@ -15,7 +15,7 @@ sudo chmod a+x /usr/bin/awmtt
 To use `-R` live reload option, you need to install [entr](https://github.com/eradman/entr).
 
 ```
-
+awmtt -R -C ~/.config/awesome.dev/rc.lua -a "--search ~/.config/awesome.dev"
 ```
 ### Screenshot
 Here's an example of what it looks like:  
@@ -44,7 +44,7 @@ Options:
   -B|--binary <path>  Specify path to awesome binary (for testing custom awesome builds)
   -C|--config <path>  Specify configuration file
   -D|--display <int>  Specify the display to use (e.g. 1)
-  -R|--autoreload     Enable automatic config reloading upon modification . Requires entr.
+  -R|--autoreload     Enable automatic config reloading upon modification. Requires entr.
   -N|--notest         Don't use a testfile but your actual rc.lua (i.e. $HOME/.config/awesome/rc.lua)
                       This happens by default if there is no rc.lua.test file.
   -S|--size <size>    Specify the window size
@@ -59,5 +59,5 @@ Examples:
 ```
 
 ### Xephyr
-Have a look at https://awesomewm.org/apidoc/documentation/07-my-first-awesome.md.html and its documentation to learn more about how to use it. 
+Have a look at https://awesomewm.org/apidoc/documentation/07-my-first-awesome.md.html and its documentation to learn more about how to use it.
 For instance, you can press `Control-Shift` to have Xephyr grab focus while inside the window so that you can't accidentally leave it. To let go, press `Control-Shift`.  
