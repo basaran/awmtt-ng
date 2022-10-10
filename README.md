@@ -15,11 +15,11 @@ sudo chmod a+x /usr/bin/awmtt-ng
 To use `-R` live reload option, you need to install [entr](https://github.com/eradman/entr).
 
 ```
-awmtt-ng -R -C ~/.config/awesome.dev/rc.lua -a "--search ~/.config/awesome.dev"
+awmtt-ng start -R -C ~/.config/awesome/rc.lua -a "--search ~/.config/awesome"
 ```
 ### Screenshot
 Here's an example of what it looks like:  
-![ScreenShot](https://github.com/mikar/awmtt-ng/blob/master/example.jpg)
+![ScreenShot](https://github.com/basaran/awmtt-ng/blob/master/example.jpg)
 
 ### Usage
 ```
