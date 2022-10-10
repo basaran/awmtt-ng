@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# awmtt: awesomewm testing tool
-# https://github.com/mikar/awmtt
+# awmtt-ng: awesomewm testing tool
+# https://github.com/basaran/awmtt-ng
 
 #{{{ Usage
 usage() {
     cat <<EOF
-awmtt start [-B <path>] [-C <path>] [-D <int>] [-S <size>] [-a <opt>]... [-x <opts>]
-awmtt (stop [all] | restart)
-awmtt run [-D <int>] <command>
-awmtt theme (get | set <theme> | list | random) [-N]
+awmtt-ng start [-B <path>] [-C <path>] [-D <int>] [-S <size>] [-a <opt>]... [-x <opts>]
+awmtt-ng (stop [all] | restart)
+awmtt-ng run [-D <int>] <command>
+awmtt-ng theme (get | set <theme> | list | random) [-N]
 
 Arguments:
   start           Spawn nested Awesome via Xephyr
@@ -35,9 +35,9 @@ Options:
   -h|--help           Show this help text and exit
 
 Examples:
-  awmtt start (uses defaults: -C $HOME/.config/awesome/rc.lua.test -D 1 -S 1024x640)
-  awmtt start -C /etc/xdg/awesome/rc.lua -D 3 -S 1280x800
-  awmtt theme set zenburn -N
+  awmtt-ng start (uses defaults: -C $HOME/.config/awesome/rc.lua.test -D 1 -S 1024x640)
+  awmtt-ng start -C /etc/xdg/awesome/rc.lua -D 3 -S 1280x800
+  awmtt-ng theme set zenburn -N
 EOF
     exit 0
 }
@@ -60,7 +60,7 @@ XEPHYR=$(which Xephyr)
 #{{{ Default Variables
 # Display and window size
 D=1
-SIZE="1024x640"
+SIZE="1200x800"
 AWESOME_OPTIONS=""
 XEPHYR_OPTIONS=""
 # Path to rc.lua
