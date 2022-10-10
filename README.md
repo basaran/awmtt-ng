@@ -7,7 +7,7 @@ It requires Xephyr, an Xorg-Application which can spawn a nested instance of xor
 Example Debian/Ubuntu manual installation:
 ``` bash
 sudo apt-get install xserver-xephyr
-sudo wget -O /usr/bin/awmtt-ng https://raw.githubusercontent.com/mikar/awmtt-ng/master/awmtt-ng.sh
+sudo wget -O /usr/bin/awmtt-ng https://raw.githubusercontent.com/basaran/awmtt-ng/master/awmtt-ng.sh
 sudo chmod a+x /usr/bin/awmtt-ng
 ```
 
