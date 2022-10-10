@@ -1,5 +1,5 @@
 # awmtt-ng
-awmtt (AwesomeWM Testing Tool) is a bash script that helps you test your Awesome configuration files.  
+awmtt-ng (AwesomeWM Testing Tool) is a bash script that helps you test your Awesome configuration files.  
 It requires Xephyr, an Xorg-Application which can spawn a nested instance of xorg-server, allowing you to open multiple instances of Desktop Environments or Window Mangers like AwesomeWM.  
 
 ### Installation
@@ -7,26 +7,26 @@ It requires Xephyr, an Xorg-Application which can spawn a nested instance of xor
 Example Debian/Ubuntu manual installation:
 ``` bash
 sudo apt-get install xserver-xephyr
-sudo wget -O /usr/bin/awmtt https://raw.githubusercontent.com/mikar/awmtt/master/awmtt.sh
-sudo chmod a+x /usr/bin/awmtt
+sudo wget -O /usr/bin/awmtt-ng https://raw.githubusercontent.com/mikar/awmtt-ng/master/awmtt-ng.sh
+sudo chmod a+x /usr/bin/awmtt-ng
 ```
 
 ### Live Reload
 To use `-R` live reload option, you need to install [entr](https://github.com/eradman/entr).
 
 ```
-awmtt -R -C ~/.config/awesome.dev/rc.lua -a "--search ~/.config/awesome.dev"
+awmtt-ng -R -C ~/.config/awesome.dev/rc.lua -a "--search ~/.config/awesome.dev"
 ```
 ### Screenshot
 Here's an example of what it looks like:  
-![ScreenShot](https://github.com/mikar/awmtt/blob/master/example.jpg)
+![ScreenShot](https://github.com/mikar/awmtt-ng/blob/master/example.jpg)
 
 ### Usage
 ```
-awmtt start [-B <path>] [-C <path>] [-D <int>] [-S <size>] [-a <opt>]... [-x <opts>]
-awmtt (stop [all] | restart)
-awmtt run [-D <int>] <command>
-awmtt theme (get | set <theme> | list | random) [-N]
+awmtt-ng start [-B <path>] [-C <path>] [-D <int>] [-S <size>] [-a <opt>]... [-x <opts>]
+awmtt-ng (stop [all] | restart)
+awmtt-ng run [-D <int>] <command>
+awmtt-ng theme (get | set <theme> | list | random) [-N]
 
 Arguments:
   start           Spawn nested Awesome via Xephyr
@@ -53,9 +53,9 @@ Options:
   -h|--help           Show this help text and exit
   
 Examples:
-  awmtt start (uses defaults: -C $HOME/.config/awesome/rc.lua.test -D 1 -S 1024x640)
-  awmtt start -C /etc/xdg/awesome/rc.lua -D 3 -S 1280x800 -x -keybd ephyr,,,xkbmodel=pc105,xkblayout=de,xkbrules=evdev,xkboption=grp:alts_toogle
-  awmtt theme set zenburn -N
+  awmtt-ng start (uses defaults: -C $HOME/.config/awesome/rc.lua.test -D 1 -S 1024x640)
+  awmtt-ng start -C /etc/xdg/awesome/rc.lua -D 3 -S 1280x800 -x -keybd ephyr,,,xkbmodel=pc105,xkblayout=de,xkbrules=evdev,xkboption=grp:alts_toogle
+  awmtt-ng theme set zenburn -N
 ```
 
 ### Xephyr
