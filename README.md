@@ -1,3 +1,7 @@
+If you would like to use a compiled binary, please also check out:
+
+[https://github.com/Curve/aawmtt](https://github.com/Curve/aawmtt)
+
 # awmtt-ng
 awmtt-ng (AwesomeWM Testing Tool) is a bash script that helps you test your Awesome configuration files.  
 It requires Xephyr, an Xorg-Application which can spawn a nested instance of xorg-server, allowing you to open multiple instances of Desktop Environments or Window Mangers like AwesomeWM.  
